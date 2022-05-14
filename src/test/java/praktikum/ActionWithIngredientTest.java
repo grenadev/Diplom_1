@@ -47,14 +47,20 @@ public class ActionWithIngredientTest {
 
         // Arrange
         Burger burger = new Burger();
+        Ingredient ingredientOne = new Ingredient(IngredientType.SAUCE,"ingredientOne",3);
+        Ingredient ingredientTwo = new Ingredient(IngredientType.SAUCE,"ingredientTwo",4);
+        Ingredient ingredientThree = new Ingredient(IngredientType.SAUCE,"ingredientThree",5);
 
         //Act
-        burger.addIngredient(ingredient);
-        burger.addIngredient(ingredient);
-        burger.addIngredient(ingredient);
-        burger.moveIngredient(2, 1);
+        burger.addIngredient(ingredientOne);
+        burger.addIngredient(ingredientTwo);
+        burger.addIngredient(ingredientThree);
+
+        String name = burger.ingredients.get(2).name;
+
+        burger.moveIngredient(2,1);
 
         //Assert
-        Assert.assertEquals(burger.ingredients.size(), 3);
+        Assert.assertEquals(burger.ingredients.get(1).getName(), name);
     }
 }
