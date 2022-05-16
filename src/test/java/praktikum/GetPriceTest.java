@@ -48,6 +48,6 @@ public class GetPriceTest {
         }
 
         //Сравнием получившуюся стоимость с ожидаемой
-        Assert.assertEquals((int)burger.getPrice(), expected);
+        Assert.assertEquals(burger.getPrice(), expected, 0.0001);
     }
 }
